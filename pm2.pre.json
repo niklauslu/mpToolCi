@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "code_server_pre",
+      //"max_memory_restart": "1500M",
+      "script": "index.js",
+      "watch": [
+          "controllers",
+          "utils",
+          "index.js",
+          "middleware"
+      ],
+      "ignore_watch": [
+        "node_modules",
+        "logs"
+      ],
+      "log_date_format": "YYYY-MM=DD HH:mm:ss",
+      "instances": 1,
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "pre",
+        "PORT":11111,
+        "privatekeyPath": "./privatekey",
+        "tempPath": "/var/temp",
+        "previewPath": "/var/preview",
+        "redis_port": 6379,
+        "redis_host": "127.0.0.1",
+        "defaultAppIds": "wx2e40960c5cfb7723"
+      }
+    }
+  ]
+}

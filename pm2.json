@@ -1,0 +1,27 @@
+
+{
+    "apps": [
+      {
+        "name": "code_server",
+        //"max_memory_restart": "1500M",
+        "script": "index.js",
+        "watch": [
+            "controllers",
+            "utils",
+            "index.js",
+            "middleware"
+        ],
+        "ignore_watch": [
+          "node_modules",
+          "logs"
+        ],
+        "log_date_format": "YYYY-MM=DD HH:mm:ss",
+        "instances": 1,
+        "exec_mode": "cluster",
+        "env": {
+          "NODE_ENV": "production",
+          "PORT":11111
+        }
+      }
+    ]
+  }

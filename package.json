@@ -1,0 +1,31 @@
+{
+  "name": "code_server_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "pm2 start pm2.test.json",
+    "dev": "cross-env NODE_ENV=dev nodemon start index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "prod": "cross-env NODE_ENV=production pm2 start index.js -n mpToolCodeServer -o ./logs/out.log -e ./logs/err.log",
+    "pre": "pm2 start pm2.pre.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.code.tencent.com:mp_std_platform/code_server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^5.3.0",
+    "compressing": "^1.5.1",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "log4js": "^6.3.0",
+    "miniprogram-ci": "^1.2.3",
+    "redis": "^3.1.2",
+    "request": "^2.88.2"
+  }
+}
